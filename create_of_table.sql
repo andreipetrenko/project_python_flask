@@ -10,15 +10,16 @@ create table banks(
 		name VARCHAR(255) not null,
 		bik INT not null);
 
-create table contributions(
+create table deposits(
+		dpst_id serial primary key,
 		clnt_clnt_id INT not null,
 		bank_bank_id INT not null,
+		deposite_amount INT not null,
 		date_open DATE not null,
 		date_close DATE,
 		date_update DATE,
 		procent INT not null,
-		month_contrib INT not null,
-		primary key (clnt_clnt_id, bank_bank_id),
+		month_deposit INT not null,
 		foreign key (clnt_clnt_id)
 			references clients (clnt_id),
 		foreign key (bank_bank_id)
